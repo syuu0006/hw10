@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "World happiness rank",
+  "title": "GDP per capita for Countries",
   "width": 800,
   "height": 600,
   "data": {

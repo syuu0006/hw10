@@ -36,7 +36,7 @@
     }
   ],
   "transform": [
-    {"filter": "Continent_selection == null || datum.Continent == Continent_selection"}
+    {"filter": "Continent_selection == null || datum.Region == Continent_selection"}
   ],
   "encoding": {
     "x": {

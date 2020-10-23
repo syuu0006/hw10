@@ -42,12 +42,14 @@
     "x": {
       "field": "GDP per capita",
       "type": "quantitative",
-      "title": "GDP per capita"
+      "title": "GDP per capita",
+      "axis": {"tickCount": 7}
     },
     "y": {
       "field": "Score",
       "type": "quantitative",
-      "title":"Happieness Score"
+      "title":"Happieness Score",
+      "axis": {"tickCount": 7}
     }
   },
   "layer": [
@@ -77,7 +79,7 @@
           "scale": {
             "domain": [
               "NORTHERN_AMERICA",
-              "Latin",
+              "LATIN",
               "EUROPE",
               "AFRICA",
               "ASIA",

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Happiness Ranking vs GDP vs Population ",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/syuu0006/hw9/main/data/FIT3179dataset.csv"
+  },
+  "params": [
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "NORTHERN_AMERICA",
+          "LATIN",
+          "EUROPE",
+          "AFRICA",
+          "ASIA",
+          "OCEANIA",
+          "NEAR_EAST"
+        ],
+        "labels": [
+          "Show All",
+          "North America",
+          "Latin",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania",
+          "Near East"
+        ],
+        "name": "Continent Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Continent_selection == null || datum.Continent == Continent_selection"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "GDP per capita",
+      "type": "quantitative",
+      "title": "GDP per capita"
+    },
+    "y": {
+      "field": "Score",
+      "type": "quantitative",
+      "title":"Happieness Score"
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["Region"],
+          "bind": "legend"
+        }
+      },
+    "mark":"circle",
+    "encoding": {
+      "size": {
+          "field": "Population",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+            "range": [10, 50, 150, 200, 300, 400]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "NORTHERN_AMERICA",
+              "Latin",
+              "EUROPE",
+              "AFRICA",
+              "ASIA",
+              "OCEANIA",
+              "NEAR_EAST"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "green",
+              "blue",
+              "red"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {"selection": "continent_highlight", "value": 0.6},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Overall rank", "type": "quantitative"},
+          {"field": "Country", "type": "nominal"},
+          {"field": "Score", "type": "quantitative"},
+          {"field": "Population", "type": "quantitative"},
+          {"field": "GDP per capita", "type": "quantitative"}
+        ]
+    }
+    }
+  ]
+}

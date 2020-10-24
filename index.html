@@ -15,26 +15,28 @@
   
 
 <h1> FIT3179 Week10 Homework </h1>
-  
-<h2> Symbol Map Chart </h2>
-<div id="symbol_map"></div>
 
-<h2> Bubble Chart</h2>
+  
+<h2> Happiness Ranking vs. GDP vs. Populatio</h2>
 <div id="bubble_chart"></div>
+  
+<h2> GDP per capita for Countries </h2>
+<div id="symbol_map"></div>
  
 <script type="text/javascript">
   
-  var vis1 = "js/symbol_map.json";
+  var vis1 = "js/bubbleChart.json";
   
-  vegaEmbed('#symbol_map', vis1).then(function(result) {
+  vegaEmbed('#bubble_chart', vis1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  var vis2 = "js/bubbleChart.json";
+  var vis2 = "js/symbol_map.json";
   
-  vegaEmbed('#bubble_chart', vis2).then(function(result) {
+  vegaEmbed('#symbol_map', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+  
 </script>
 
 </body>

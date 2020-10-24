@@ -36,7 +36,9 @@
     }
   ],
   "transform": [
-    {"filter": "Continent_selection == null || datum.Region == Continent_selection"}
+    {
+      "filter": "Continent_selection == null || datum.Region == Continent_selection"
+    }
   ],
   "encoding": {
     "x": {
@@ -48,7 +50,7 @@
     "y": {
       "field": "Score",
       "type": "quantitative",
-      "title":"Happieness Score",
+      "title": "Happieness Score",
       "axis": {"tickCount": 7}
     }
   },
@@ -61,9 +63,9 @@
           "bind": "legend"
         }
       },
-    "mark":"circle",
-    "encoding": {
-      "size": {
+      "mark": "circle",
+      "encoding": {
+        "size": {
           "field": "Population",
           "type": "quantitative",
           "scale": {
@@ -108,7 +110,35 @@
           {"field": "Population", "type": "quantitative"},
           {"field": "GDP per capita", "type": "quantitative"}
         ]
-    }
+      }
+    },
+      {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -5,
+        "fontSize": 10,
+        "fontStyle": "bold"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] == 'China' || datum['Country'] == 'Haiti' || datum['Country'] == 'Australia' || datum['Country'] == 'Jordan' || datum['Country'] == 'Cambodia' || datum['Country'] == 'Ukraine' ||  datum['Country'] == 'United States'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Overall rank", "type": "quantitative"},
+          {"field": "Country", "type": "nominal"},
+          {"field": "Score", "type": "quantitative"},
+          {"field": "Population", "type": "quantitative"},
+          {"field": "GDP per capita", "type": "quantitative"}
+        ]
+      }
     }
   ]
 }

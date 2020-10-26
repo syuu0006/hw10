@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Happiness Ranking vs GDP vs Population ",
-  "width": 700,
+  "title": "Happiness Score vs GDP vs Population ",
+  "width": 600,
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/syuu0006/hw9/main/data/FIT3179dataset.csv"

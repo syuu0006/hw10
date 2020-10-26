@@ -6,8 +6,8 @@
     "url": "https://raw.githubusercontent.com/syuu0006/hw9/main/data/FIT3179dataset.csv"
   },
   "mark":"point",
-  "width":250,
-  "height":250,
+  "width":270,
+  "height":270,
   "encoding": {
     "x": {"field": {"repeat": "repeat"}, "type": "quantitative"},
       "y": {

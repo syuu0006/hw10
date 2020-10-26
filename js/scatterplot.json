@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Relationship between different factors and Happiness Score",
   "repeat": ["GDP per capita","Perceptions of corruption", "Generosity", "Freedom to make life choices", "Healthy life expectancy","Social support"],
   "spec":{
     "data": {

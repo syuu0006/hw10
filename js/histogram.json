@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Distribution of countries with different level of happiness",
-  "width":1000,
+  "width":1100,
   "height":600,
   "data": {"url": "https://raw.githubusercontent.com/syuu0006/hw9/main/data/FIT3179dataset.csv"},
   "mark":"bar",

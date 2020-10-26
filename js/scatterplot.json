@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Relationship between different factors and Happiness Score",
+  "repeat": ["GDP per capita","Perceptions of corruption", "Generosity", "Freedom to make life choices", "Healthy life expectancy","Social support"],
+  "spec":{
+    "data": {
+    "url": "https://raw.githubusercontent.com/syuu0006/hw9/main/data/FIT3179dataset.csv"
+  },
+  "mark":"point",
+  "encoding": {
+    "x": {"field": {"repeat": "repeat"}, "type": "quantitative"},
+      "y": {
+        "field": "Score",
+        "type": "quantitative",
+        "axis": {"minExtent": 30}
+      },
+      "color": {
+          "field": "Region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "NORTHERN_AMERICA",
+              "LATIN",
+              "EUROPE",
+              "AFRICA",
+              "ASIA",
+              "OCEANIA",
+              "NEAR_EAST"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "green",
+              "blue",
+              "red"
+            ]
+          }
+        }
+    }
+  },
+  "columns": 3
+}
